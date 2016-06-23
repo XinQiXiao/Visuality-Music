@@ -1,0 +1,141 @@
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;	
+}
+
+html,body{
+	height: 100%;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+header,.left,.right{
+	position: absolute;
+}
+header{
+	left: 10px;
+	top: 10px;
+	right: 10px;
+	height: 150px;
+}
+header h1{
+	font-size: 40px;
+	height: 60px;
+	line-height: 60px;
+}
+header .type{
+	display: inline-block;
+}
+header .type:after{
+	display: block;
+	content: '';
+	clear: both;
+}
+header .type li{
+	list-style: none;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	width: 80px;
+	border-top: solid 1px #fff;
+	border-right: solid 1px #fff;
+	border-bottom: solid 1px #fff;
+	cursor: pointer;
+}
+header .type li:nth-child(1){
+	border-left: solid 1px #fff;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+header .type li:nth-child(2){
+	border-width: 1px 1px 1px 0;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+header .type li.selected{
+	background: #fff;
+	color: #000;
+}
+.left{
+	left: 10px;
+	top: 170px;
+	bottom: 10px;
+	width: 15%;
+	border: solid #fff 1px;
+	overflow: auto;
+}
+.left ul li{
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.left ul li.selected{
+	color: green;
+}
+
+.right{
+	top: 170px;
+	right: 10px;
+	bottom: 10px;
+	left: -webkit-calc(15% + 20px);
+	left: calc(15% + 20px);
+}
+input[type='range']{
+	-webkit-appearance: none;	/* 取消默认的样式 */
+	height: 8px;
+	background: #999;
+	border-radius: 10px;
+	outline: none;
+}
+input[type='range']::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	height: 12px;
+	width: 12px;
+	background: #fff;
+	border-radius:100%;
+}
+/* 火狐写法 */
+/* 滑槽样式 */
+input[type='range']::-moz-range-track{
+	height: 8px;
+	background: #999;
+	border-radius: 10px;
+	border: none;
+}
+input[type='range']::-moz-range-trach{
+	height: 12px;
+	width: 12px;
+	background: #fff;
+	border-radius: 100%;
+	border: none;
+}
+/* 媒体查询 */
+@media screen and (max-width: 800px),screen and (max-height: 500px){
+	body{
+		font-size: 12px;
+	}
+	header{
+		height: 80px;
+	}
+	header h1{
+		font-size: 24px;
+		height: 34px;
+		line-height: 34px;
+	}
+	header .type li{
+		height: 16px;
+		line-height: 16px;
+		width: 50px;
+	}
+	.left,.right{
+		top: 100px;
+	}
+}
